@@ -1,0 +1,23 @@
+{
+	"name": "DSCovidCountryCodes",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSHttpGithubCountryCodes",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "UID_ISO_FIPS_LookUp_Table.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

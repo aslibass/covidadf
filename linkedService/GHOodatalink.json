@@ -1,0 +1,12 @@
+{
+	"name": "GHOodatalink",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "OData",
+		"typeProperties": {
+			"url": "https://ghoapi.azureedge.net/api",
+			"authenticationType": "Anonymous"
+		}
+	}
+}

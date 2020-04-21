@@ -1,0 +1,17 @@
+{
+	"name": "SynapseDoctors2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSSynapse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "covid",
+			"table": "combined2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

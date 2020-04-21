@@ -1,0 +1,16 @@
+{
+	"name": "ODataResource1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GHOodatalink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "ODataResource",
+		"schema": [],
+		"typeProperties": {
+			"path": "HWF_0001"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,260 @@
+{
+	"name": "Download GHO Doctor Count",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Doctor Count from GHO",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ODataSource"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Id",
+									"type": "Int64"
+								},
+								"sink": {
+									"type": "Int64",
+									"ordinal": 1
+								}
+							},
+							{
+								"source": {
+									"name": "IndicatorCode",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 2
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDimType",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 3
+								}
+							},
+							{
+								"source": {
+									"name": "SpatialDim",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 4
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDimType",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 5
+								}
+							},
+							{
+								"source": {
+									"name": "TimeDim",
+									"type": "Int32"
+								},
+								"sink": {
+									"type": "Int32",
+									"ordinal": 6
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1Type",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 7
+								}
+							},
+							{
+								"source": {
+									"name": "Dim1",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 8
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2Type",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 9
+								}
+							},
+							{
+								"source": {
+									"name": "Dim2",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 10
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3Type",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 11
+								}
+							},
+							{
+								"source": {
+									"name": "Dim3",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 12
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDimType",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 13
+								}
+							},
+							{
+								"source": {
+									"name": "DataSourceDim",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 14
+								}
+							},
+							{
+								"source": {
+									"name": "Value",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 15
+								}
+							},
+							{
+								"source": {
+									"name": "NumericValue",
+									"type": "Decimal"
+								},
+								"sink": {
+									"type": "Decimal",
+									"ordinal": 16
+								}
+							},
+							{
+								"source": {
+									"name": "Low",
+									"type": "Decimal"
+								},
+								"sink": {
+									"type": "Decimal",
+									"ordinal": 17
+								}
+							},
+							{
+								"source": {
+									"name": "High",
+									"type": "Decimal"
+								},
+								"sink": {
+									"type": "Decimal",
+									"ordinal": 18
+								}
+							},
+							{
+								"source": {
+									"name": "Comments",
+									"type": "String"
+								},
+								"sink": {
+									"type": "String",
+									"ordinal": 19
+								}
+							},
+							{
+								"source": {
+									"name": "Date",
+									"type": "DateTimeOffset"
+								},
+								"sink": {
+									"type": "DateTimeOffset",
+									"ordinal": 20
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ODataResource1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Doctors",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "00_Ingest_Dataset to Lake"
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

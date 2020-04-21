@@ -1,0 +1,37 @@
+{
+	"name": "CombinedCovidData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLStoreCovidHack",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "final",
+				"fileSystem": "outputs"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "NIU",
+				"type": "String"
+			},
+			{
+				"name": "2008",
+				"type": "String"
+			},
+			{
+				"name": "23.529",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
